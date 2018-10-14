@@ -1,0 +1,8 @@
+Nominal, Ordinal, Interval, and Ratio Typologies are Misleading
+===============================================================
+
+
+
+Reference:
+
+    [1]P. F. Velleman and L. Wilkinson, “Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,” The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.
