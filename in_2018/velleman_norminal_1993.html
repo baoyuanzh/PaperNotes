@@ -42,9 +42,68 @@
             
   <div class="section" id="nominal-ordinal-interval-and-ratio-typologies-are-misleading">
 <h1>Nominal, Ordinal, Interval, and Ratio Typologies are Misleading<a class="headerlink" href="#nominal-ordinal-interval-and-ratio-typologies-are-misleading" title="Permalink to this headline">¶</a></h1>
+<p>本文共分成 15 小节来说明 S. S. Stevens 的类型系统是误导人的。
+在我看来其实只有一个方面，就是 – 数据属性的类型应该由其在具体问题中的具体含义来决定。</p>
+<p>不过我觉得这篇文章写得非常值得学习一下。</p>
+<p>首先陈述 S. S. Stevens 的类型系统:</p>
+<blockquote>
+<div>In the early 1940s, the Harvard psychophysicist S. S. Stenvens coined the term <em>nominal, ordinal, interval,</em> and <em>ratio</em> to describe a hierarchy of measurement scales <a class="footnote-reference" href="#f1" id="id1">[1]</a> used in psychophysics, and classified statistical procedures according to the scales for which they were “permissible.”</div></blockquote>
+<p>然后抛出自己的观点:</p>
+<blockquote>
+<div>Unfortunately, the use of Stevens’s categories in selecting or recommending statistical analysis method is in appropriate and can often be wrong. They do not describe the attributes of real data that is essential to good statistical analysis. Nor do they provides a classification scheme appropriate for modern data analysis methods.</div></blockquote>
+<div class="section" id="steven-s-typology-of-data">
+<h2>第一节 Steven’s Typology of Data<a class="headerlink" href="#steven-s-typology-of-data" title="Permalink to this headline">¶</a></h2>
+<p>以下是具体的分析，其实 Stevens 的有些观点是蛮有意思的：</p>
+<blockquote>
+<div><p>… <strong>Stevens presented a hierarchy of data scales based on invariance of their meaning under difference classies of transformations.</strong></p>
+<p>Measurement scales that preserve meaning under a wide variety of transformations in some sense convey less information than those whose meaning is preserved by only a restricted class of transformations.</p>
+<p>Stevens called such a scale <em>ordinal</em> if any transformation of the scale value that preserves their numerical order produces another scale that shares the same one-to-one relation between comparisons among objects and comparisons among corresponding scale values. … Stevens used the term <em>permissible</em> to describe the set of transformation that preserves the …</p>
+<p>… Interval scales involves a difference (-) instead of order (&gt;) operator, … Thus linear transformation … are permissible for interval scale data, but we may not, for example, take <em>logs</em>. This is a smaller class of permissible transformation than for ordinal data, suggesting that in some sense the data values carry more information. … Ratio scales preserve relative ratios, … Ratio scale data have a defined zero, which may not be changed. Nominal scales … do not even require … numerical values, but only of unique identifiers. They are invariant under any transformation that preserves the relationship between individuals and their identifiers. … <strong>Of course, only the weakest kind of information can survive such arbitrary transformations.</strong></p>
+</div></blockquote>
+<p>几个问题的定义</p>
+<dl class="docutils">
+<dt><strong>Representation problem</strong></dt>
+<dd>Measurement theorists call the issue involved in assigning scale values to observations the representation problem.</dd>
+<dt><strong>Uniqueness problem</strong></dt>
+<dd>They call the invariance of scales under transformations the uniqueness problem.</dd>
+<dt><strong>Meaningfulness problem</strong></dt>
+<dd>Determining the truth or falsity of statements based on comparisons of assigned scale values has been called the meaningfulness problem. <a class="footnote-reference" href="#f2" id="id2">[2]</a></dd>
+</dl>
+</div>
+<div class="section" id="prescribing-and-proscribing-statistics">
+<h2>第二节 Prescribing and Proscribing statistics<a class="headerlink" href="#prescribing-and-proscribing-statistics" title="Permalink to this headline">¶</a></h2>
+<p>这一节说的是 Stevens 不仅把他的理念用在一些简单的的运算之上，而是扩展到了 statistical procedures 上面</p>
+<blockquote>
+<div>He classified not just simple operations, but also statistical procedures according to the scales for which they were “permissible.” A scale that preserves meaning under some class of transformations should, … be restricted to statistics whose meaning would not change were any of those transformations applied to the data.</div></blockquote>
+<p>上面那句英语，我没看懂 :( 我英语不够好。吐槽一下，现在的文章质量普遍在下降，虽然对现在的我来说不见得是件坏事，但实际上是。
+下面的举例可以让我稍微理解一下:</p>
+<blockquote>
+<div>By this reasoning, analyses on nominal data, for example, should be limited to summary statistics such as the numbers of cases, the mode, and contingency correlation, which require only that the identity of the values be preserved. Permissible statistics of ordinal scales included these plus the median, percentiles, and ordinal correlations, that is, statistics whose meanings are preserved when monotone transformations are applied to data. Interval data allowed, in addition, means, standard deviations (although not all common statistics computed with standard deviations), and product moment correlations, becasuse the interpretations of these statistics are unchanged when linear transformations are applied to the data. Finally ratio data allowed all of these plus geometrical means and coefficients of variation, which are unchanged by rescaling the data.</div></blockquote>
+<p>看了上面的举例解释，我理解了，稍微该成我理解的形式， A scale that preserves meaning under some class of transformations should be restricted to statistics whose meaning would not change when any of those transformations were applied to the data.</p>
+<p>我感觉我主要是在学英语，哈哈！Luce 的总结更加简洁，</p>
+<blockquote>
+<div>… the scale type places [limitations] upon the statistics one may sensibly employ. If the interpretation of a particular statistic or statistical test is altered when admissible  scale transformations are applied, then our substantive conclusion will depend on which arbitrary representation we have used in making our calculations. Most scientists, when they understand the problem, feel that they should shun such statistics and rely only upon those that exhibit the appropriate invariances for the scale type at hand.</div></blockquote>
+<p>我都被说服了，上面说的这有什么不对的吗，不变是多么美好的性质。</p>
+</div>
+<div class="section" id="classical-criticisms-of-stevens-s-proscriptions">
+<h2>第三节 Classical Criticisms of Stevens’s Proscriptions<a class="headerlink" href="#classical-criticisms-of-stevens-s-proscriptions" title="Permalink to this headline">¶</a></h2>
 <p>Reference:</p>
 <blockquote>
-<div>[1]P. F. Velleman and L. Wilkinson, “Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,” The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.</div></blockquote>
+<div>[1]P. F. Velleman and L. Wilkinson, <em>“Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,”</em> The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.</div></blockquote>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>A measurement scale is a rule (function) that associates a numerical or symbolic value with an attribute of an object.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>This last problem, concerning the meaningfulness of empirical scalings and analyses based on them, continues to be a focus of statistical controversy.</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
