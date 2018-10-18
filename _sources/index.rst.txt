@@ -10,7 +10,7 @@ Welcome to my Paper Notes !
    :maxdepth: 2
    :caption: Contents:
 
-   in_2018/velleman_norminal_1993
+   in_2018/toc
 
 Indices and tables
 ==================

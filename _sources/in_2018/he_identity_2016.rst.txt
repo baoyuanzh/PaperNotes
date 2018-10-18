@@ -1,0 +1,11 @@
+===============================================================
+Identity Mappings in Deep Residual Networks
+===============================================================
+
+
+
+Reference:
+
+    [1]K. He, X. Zhang, S. Ren, and J. Sun, “Identity Mappings in Deep Residual Networks,” in Computer Vision – ECCV 2016, 2016, pp. 630–645.
+
+

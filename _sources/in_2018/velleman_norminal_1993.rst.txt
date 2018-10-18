@@ -22,11 +22,11 @@ Nominal, Ordinal, Interval, and Ratio Typologies are Misleading
 
 以下是具体的分析，其实 Stevens 的有些观点是蛮有意思的：
 
-    ... **Stevens presented a hierarchy of data scales based on invariance of their meaning under difference classies of transformations.**
+    ... **Stevens presented a hierarchy of data scales based on invariance of their meaning under different classes of transformations.**
 
-    Measurement scales that preserve meaning under a wide variety of transformations in some sense convey less information than those whose meaning is preserved by only a restricted class of transformations. 
+    ... Measurement scales that preserve meaning under a wide variety of transformations in some sense convey less information than those whose meaning is preserved by only a restricted class of transformations. 
 
-    Stevens called such a scale *ordinal* if any transformation of the scale value that preserves their numerical order produces another scale that shares the same one-to-one relation between comparisons among objects and comparisons among corresponding scale values. ... Stevens used the term *permissible* to describe the set of transformation that preserves the ...
+    ... Stevens called such a scale *ordinal* if any transformation of the scale value that preserves their numerical order produces another scale that shares the same one-to-one relation between comparisons among objects and comparisons among corresponding scale values. ... Stevens used the term *permissible* to describe the set of transformation that preserves the ...
 
     ... Interval scales involves a difference (-) instead of order (>) operator, ... Thus linear transformation ... are permissible for interval scale data, but we may not, for example, take *logs*. This is a smaller class of permissible transformation than for ordinal data, suggesting that in some sense the data values carry more information. ... Ratio scales preserve relative ratios, ... Ratio scale data have a defined zero, which may not be changed. Nominal scales ... do not even require ... numerical values, but only of unique identifiers. They are invariant under any transformation that preserves the relationship between individuals and their identifiers. ... **Of course, only the weakest kind of information can survive such arbitrary transformations.**
 
@@ -66,16 +66,51 @@ Nominal, Ordinal, Interval, and Ratio Typologies are Misleading
 第三节 Classical Criticisms of Stevens's Proscriptions
 -------------------------------------------------------
 
+有个反驳的例子很好玩，先引用下主要观点
 
+    **First**, restricting the choice of statistical choice to those that "exhibit the appropriate invariances for the scale type at hand" is a dangerous practice for data analysis; **Second**, his taxonomy is too strict to apply to real-world data. **Third**, Stevens's proscriptions often lead to degrading data by rank ordering and unnecessarily resorting to nonparametric methods.
+    
+.. todo::
 
+    什么是 nonparametric methods ? 了解一下
+
+我以为一下这些观点是主要的反驳立场了
+
+    **Lord (1953) show that the choice of permissible statistical tests for a given set of data does not depend on the representation or uniqueness problems, but is concerned instead with meaningfulness.**
+    
+    Guttman (1977) argued more generally that the statistical interpretation of data depends on the question asked of the data and on the kind of evidence that we would accept to inform us about that question. He defines this evidence in terms of the loss function chosen to fit a model.
+    
+好玩的例子:
+
+    His note imagined the accusation that a professor who owned the university "football jersey number concession" had peddled unusually low numbers to the Freshman class. Although Lord's professor protests that football numbers are only nominal-scale values, the statisticians he consults is happy to add them up, square them, compute their mean, and perform other operations needed for the application of Tchebycheff's inequality [#f3]_ (avoiding reference to normality) to test the accusation that the numbers were "too low". When the professor protests that these were nominal "football numbers," the statistician remarks that "the numbers don't know where they came from" --- a remark that, in retrospect, may have been a bit too glib for the seriousness of Lord's point.
+
+其实我认为，也许问题主要在于：“所谓的 data 的 meaning 发生在什么地方？”
+按照本文的说法，Stevens 的说法过于把数据的意义固定于所考察对象的常见意义（见下面的引用），比如足球服的号码主要是用来区分球员，在这个意义下，数字的大小的确没有意义。
+如果学校里的那些新生关注的是这些球衣能否有效的把他们区分开来，那么这个意义是没毛病的。
+但是，如果新生们对数字有偏好，那么球衣号码的大小就有了意义，这其实已经是另一回事了。
+
+    (Tukey, 1961) The thus summarized [by Luce] is a dangerous one ...
+    Results based on approximate foundations must be used with underlying approximation in mind. Those who seek certainty rather than truth will try to avoid this fact. But what knowledge is not ultimately based on some approximation? And what progress has been made, except with the use of such knowledge.
+    
+最后一句其实也许有点问题，如果到不了彼岸，倒也没什么，approximation 就是我们借助的舟。
+可要是到了彼岸呢，我抛弃这个 approximate 的工具有什么问题。
+再说了，certainty 和 truth 有绝对矛盾的地方吗 ？绝对的真理也许绝对确定，而在不确定中建立的真理，是否真理本身的意义就在于不确定呢？比如海森堡测不准？
+这个反驳也许有点过头了。
+
+事实上 Stevens 自己也承认，
+
+    there can be a kind of pragmatic sanction: in numerous instances it leads to fruitful results.
+
+所以也可以反过来说，Stevens 的观点也没有那么绝对，他只是没有明确意识到 meaning 真正产生的那个地方。
 
 Reference:
 
     [1]P. F. Velleman and L. Wilkinson, *“Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,”* The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.
-
 
 .. rubric:: Footnotes
 
 .. [#f1] A measurement scale is a rule (function) that associates a numerical or symbolic value with an attribute of an object.
 
 .. [#f2] This last problem, concerning the meaningfulness of empirical scalings and analyses based on them, continues to be a focus of statistical controversy.
+
+.. [#f3] :math:`Pr(|X-E(X)|\ge t) \le \dfrac{Var(X)}{t^2},\quad \forall t>0`
