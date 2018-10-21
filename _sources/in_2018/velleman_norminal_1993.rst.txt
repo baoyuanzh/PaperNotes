@@ -135,10 +135,27 @@ measurement theorist （这是什么理论专家，测度理论专家？）通�
 
 
 
+-------------------------------------------------------
+第七节 Good Data Analysis Does NOT Assume Data Types
+-------------------------------------------------------
 
+    Things are seldom what they seem.
+    
+    Data that appear to have one type in fact hide other information
+    
+上面的第二句话有个例子，零售店的结账口一般来说是有标号的，这些标号可以认为是 nominal 的，因为它们只是用来区分不同的结账口。
+但不可否认的是，具有以下这种可能性，这些带有顺序的 ID 号和结账口之间的开张顺序是相对应的，据此，我们也许可以来探索 ID 号和其他一些重要变量之间的联系。
 
+我个人认为，这个还是很有道理的，虽然一个超级强大的学习机面对即使是乱排的 ID 号，也可以来探索某种存在的关系，但是实际生活中，缺少这种天然的对应关系，要找到本来存在的联系相对来说就变得困难了。
+比如如果顺序是相对应的，我们可以找到一种线性关系，那么当打乱 ID 时，这种线性的 pattern 就变得模糊不清，甚至像是被藏起来了。
 
+而且 Joiner 继续说到，实际上得到的实验数据总是离完美有那么一点点差距，比如对照实验要求除了感兴趣的因素外的其他应该完全相同，然而这是很难做到的。
+比如关动物的笼子，放在上面的和放在下面的看到的景色是不一样的，本来，动物是要完全随机地被分配到笼子里，可实际上，离完全随机总是有一些差距。
+因此，
 
+    A careful data analyst should not assume that the scale type of a variable is what it appears to be even when clear assurances are made about the data.
+    
+    
 
 
 
