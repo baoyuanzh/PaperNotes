@@ -43,6 +43,7 @@
             
   <div class="section" id="nominal-ordinal-interval-and-ratio-typologies-are-misleading">
 <h1>Nominal, Ordinal, Interval, and Ratio Typologies are Misleading<a class="headerlink" href="#nominal-ordinal-interval-and-ratio-typologies-are-misleading" title="Permalink to this headline">¶</a></h1>
+<p>P. F. Velleman and L. Wilkinson, <em>“Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,”</em> The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.</p>
 <p>本文共分成 15 小节来说明 S. S. Stevens 的类型系统是误导人的。
 在我看来其实只有一个方面，就是 – 数据属性的类型应该由其在具体问题中的具体含义来决定。</p>
 <p>不过我觉得这篇文章写得非常值得学习一下。</p>
@@ -144,6 +145,12 @@ Tukey (1962) noted this difference in separating data analysis from mathematical
 </div>
 <div class="section" id="proscribing-transformations">
 <h2>第六节 Proscribing Transformations<a class="headerlink" href="#proscribing-transformations" title="Permalink to this headline">¶</a></h2>
+<p>很多 transformations 像 logarithm 和 powers 实际上是很常用的。
+然而根据 Stevens 的理论，这些 transformations 只能用在 ordinal 和 nominal 类型的数据上，这显然是不太合理的。</p>
+<blockquote>
+<div><p>There is no reason to believe that data come to us measured in the “best” way.</p>
+<p>Abelson and Tukey … criticized the tendency of scale-driven choice of statistics to select nonparametric methods, not because they lack power, but “because they are poorly adapted to the variety of uses one requires for good insight into bodies of data”</p>
+</div></blockquote>
 </div>
 <div class="section" id="good-data-analysis-does-not-assume-data-types">
 <h2>第七节 Good Data Analysis Does NOT Assume Data Types<a class="headerlink" href="#good-data-analysis-does-not-assume-data-types" title="Permalink to this headline">¶</a></h2>
@@ -160,9 +167,40 @@ Tukey (1962) noted this difference in separating data analysis from mathematical
 因此，</p>
 <blockquote>
 <div>A careful data analyst should not assume that the scale type of a variable is what it appears to be even when clear assurances are made about the data.</div></blockquote>
-<p>Reference:</p>
+</div>
+<div class="section" id="stevens-s-categories-do-not-describe-fixed-attributes-of-data">
+<h2>第八节 Stevens’s Categories Do NOT Describe Fixed Attributes of Data<a class="headerlink" href="#stevens-s-categories-do-not-describe-fixed-attributes-of-data" title="Permalink to this headline">¶</a></h2>
+<p>这一节有两个例子说明我们可以将数据做不同的用途，在不同的例子中，显然数据的类型也是不同的，尽管它仍然是同一个数据。</p>
 <blockquote>
-<div>[1]P. F. Velleman and L. Wilkinson, <em>“Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,”</em> The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.</div></blockquote>
+<div><p>The points of these examples, of course, is that the assertion, common to many traditional statistics texts, that “data values are nominal, ordinal, interval, or ratio” simplifies the matter so far as to be false. Scale type, as defined by Stevens, is not an attribute of the data, but rather depends upon the questions we intend to ask of the data and upon any additional information we may have.</p>
+<p>Rozeboom (1966): If we can but find some interpretive significance in a statistic proscribed for scales of the type to which the scale in question has been deemed to belong, then that scale’s “type” therewith broadens to accomodate this newfound content.</p>
+</div></blockquote>
+</div>
+<div class="section" id="stevens-s-categories-are-insufficient-to-describe-data-scales">
+<h2>第九节 Stevens’s Categories Are Insufficient to Describe Data Scales<a class="headerlink" href="#stevens-s-categories-are-insufficient-to-describe-data-scales" title="Permalink to this headline">¶</a></h2>
+<p>本节给出其他一些例子，用于说明 Stevens’s Categories is NOT exhaustive.</p>
+<p>比如一个 scale 可以是多维度的，比如横向的和纵向的，如下</p>
+<img alt="../_images/partially_ordered_binary_scale.png" src="../_images/partially_ordered_binary_scale.png" />
+<p>横向的表示症状具体表现，纵向的表示症状总数，那么即使分别给数据的横向或纵向分类，结合起来已无法说明数据的类型。</p>
+</div>
+<div class="section" id="statistics-procedures-cannot-be-classified-according-to-stevens-s-criteria">
+<h2>第十节 Statistics Procedures Cannot Be Classified according to Stevens’s Criteria<a class="headerlink" href="#statistics-procedures-cannot-be-classified-according-to-stevens-s-criteria" title="Permalink to this headline">¶</a></h2>
+<p>比如一个 linear estimator, <span class="math">\(L=\sum a_{i}x_{i}\)</span> ，如果我们取 <span class="math">\(a_{i} =\frac{1}{n}\)</span> 那么 L 就是一个 Mean 平均值，这相当于说数据是 Interval 的。
+可是如果我们 trim 一些（比 50% 只少一点）数据，那么 L 就是 Median 中位数，而这相当于说数据是 Ordinal 的。
+于是，对于一般的情形，trim 的百分数介于 0-50 之间，这个 trimmed mean 好像是把数据两边的值当做是 ordinal 的，而把中间的当做 Interval 的。那么，</p>
+<blockquote>
+<div>This estimator is thus on the continuum between Stevens’s ordinal and interval categories.</div></blockquote>
+</div>
+<div class="section" id="scale-types-are-not-precise-categories">
+<h2>第十一节 Scale Types are NOT Precise Categories<a class="headerlink" href="#scale-types-are-not-precise-categories" title="Permalink to this headline">¶</a></h2>
+<p>Scale types 不是绝对的，不是非要完美地指出数据的类型，一旦做不到，就只能在跟宽松的 level 上指定一个类型。
+比如，一个 Interval 数据，事实上来源于一个没校准的测量工具，那么显然，这些数据不是绝对的 Interval 数据，因为比价不同数据之间的差变得不那么有意义，因此，我们有可能只能讲该数据 demote 成 Ordinal 的，因为这些数据毕竟仍可以指出了不同值之间的大小。
+然而，</p>
+<blockquote>
+<div>when the errors are small relative to the measurements, we would sacrifice much of the information in the data if we are forced to “demote” them to ordinal scales.</div></blockquote>
+<p>Tukey 说，</p>
+<blockquote>
+<div>An oversimplified and overpurified view of what measurements are like cannot be allowed to dictate how data is to be analyzed.</div></blockquote>
 <p class="rubric">Footnotes</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>

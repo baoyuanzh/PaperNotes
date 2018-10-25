@@ -2,6 +2,7 @@
 Nominal, Ordinal, Interval, and Ratio Typologies are Misleading
 ===============================================================
 
+P\. F. Velleman and L. Wilkinson, *“Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,”* The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.
 
 本文共分成 15 小节来说明 S. S. Stevens 的类型系统是误导人的。
 在我看来其实只有一个方面，就是 -- 数据属性的类型应该由其在具体问题中的具体含义来决定。
@@ -132,8 +133,12 @@ measurement theorist （这是什么理论专家，测度理论专家？）通�
 第六节 Proscribing Transformations
 -------------------------------------------------------
 
+很多 transformations 像 logarithm 和 powers 实际上是很常用的。
+然而根据 Stevens 的理论，这些 transformations 只能用在 ordinal 和 nominal 类型的数据上，这显然是不太合理的。
 
-
+    There is no reason to believe that data come to us measured in the "best" way.
+    
+    Abelson and Tukey ... criticized the tendency of scale-driven choice of statistics to select nonparametric methods, not because they lack power, but "because they are poorly adapted to the variety of uses one requires for good insight into bodies of data"
 
 -------------------------------------------------------
 第七节 Good Data Analysis Does NOT Assume Data Types
@@ -154,26 +159,58 @@ measurement theorist （这是什么理论专家，测度理论专家？）通�
 因此，
 
     A careful data analyst should not assume that the scale type of a variable is what it appears to be even when clear assurances are made about the data.
+
+--------------------------------------------------------------------
+第八节 Stevens's Categories Do NOT Describe Fixed Attributes of Data
+--------------------------------------------------------------------
+
+这一节有两个例子说明我们可以将数据做不同的用途，在不同的例子中，显然数据的类型也是不同的，尽管它仍然是同一个数据。
+
+    The points of these examples, of course, is that the assertion, common to many traditional statistics texts, that "data values are nominal, ordinal, interval, or ratio" simplifies the matter so far as to be false. Scale type, as defined by Stevens, is not an attribute of the data, but rather depends upon the questions we intend to ask of the data and upon any additional information we may have.
     
-    
+    Rozeboom (1966): If we can but find some interpretive significance in a statistic proscribed for scales of the type to which the scale in question has been deemed to belong, then that scale's "type" therewith broadens to accomodate this newfound content.
+
+--------------------------------------------------------------------
+第九节 Stevens's Categories Are Insufficient to Describe Data Scales
+--------------------------------------------------------------------
+
+本节给出其他一些例子，用于说明 Stevens's Categories is NOT exhaustive.
+
+比如一个 scale 可以是多维度的，比如横向的和纵向的，如下
+
+.. image:: figures/velleman_norminal_1993/partially_ordered_binary_scale.png
+
+横向的表示症状具体表现，纵向的表示症状总数，那么即使分别给数据的横向或纵向分类，结合起来已无法说明数据的类型。
+
+---------------------------------------------------------------------------------
+第十节 Statistics Procedures Cannot Be Classified according to Stevens's Criteria
+---------------------------------------------------------------------------------
+
+比如一个 linear estimator, :math:`L=\sum a_{i}x_{i}` ，如果我们取 :math:`a_{i} =\frac{1}{n}` 那么 L 就是一个 Mean 平均值，这相当于说数据是 Interval 的。
+可是如果我们 trim 一些（比 50% 只少一点）数据，那么 L 就是 Median 中位数，而这相当于说数据是 Ordinal 的。
+于是，对于一般的情形，trim 的百分数介于 0-50 之间，这个 trimmed mean 好像是把数据两边的值当做是 ordinal 的，而把中间的当做 Interval 的。那么，
+
+    This estimator is thus on the continuum between Stevens's ordinal and interval categories.
+
+---------------------------------------------------------------------------------
+第十一节 Scale Types are NOT Precise Categories
+---------------------------------------------------------------------------------
+
+Scale types 不是绝对的，不是非要完美地指出数据的类型，一旦做不到，就只能在跟宽松的 level 上指定一个类型。
+比如，一个 Interval 数据，事实上来源于一个没校准的测量工具，那么显然，这些数据不是绝对的 Interval 数据，因为比价不同数据之间的差变得不那么有意义，因此，我们有可能只能讲该数据 demote 成 Ordinal 的，因为这些数据毕竟仍可以指出了不同值之间的大小。
+然而，
+
+    when the errors are small relative to the measurements, we would sacrifice much of the information in the data if we are forced to "demote" them to ordinal scales.
+
+Tukey 说，
+
+    An oversimplified and overpurified view of what measurements are like cannot be allowed to dictate how data is to be analyzed.
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-Reference:
-
-    [1]P. F. Velleman and L. Wilkinson, *“Nominal, Ordinal, Interval, and Ratio Typologies are Misleading,”* The American Statistician, vol. 47, no. 1, pp. 65–72, Feb. 1993.
 
 .. rubric:: Footnotes
 
