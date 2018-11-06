@@ -2,10 +2,7 @@
 Deep Residual Learning for Image Recognition
 ===============================================================
 
-
-Reference:
-
-    [1]K. He, X. Zhang, S. Ren, and J. Sun, “Deep Residual Learning for Image Recognition,” arXiv:1512.03385 [cs], Dec. 2015.
+K\. He, X. Zhang, S. Ren, and J. Sun, “Deep Residual Learning for Image Recognition,” arXiv:1512.03385 [cs], Dec. 2015.
 
 
 .. rubric:: Footnotes
